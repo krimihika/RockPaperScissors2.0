@@ -6,7 +6,7 @@
 		public static void main (String[] args) {
 			Scanner scan = new Scanner(System.in); 
 			Game g = new Game();
-		    
+		    Graphics gr = new Graphics();
 		    
 		    System.out.println("Please enter a move.\n" + "Rock = R, Paper" + 
 		            "= P, and Scissors = S." + "\n Enter 'Q' to quit");
