@@ -9,7 +9,7 @@ public class Graphics {
     JButton b,r,p,s;
     JTextField tf1,tf2,tf3;
     //JTextArea ta;
-    JLabel l1,l2,l3,l4,l5; 
+    JLabel l1,plPoints,coPoints; 
     Font font1 = new Font("SansSerif", Font.BOLD, 20);
     Game g;
     Color myColor;
@@ -24,7 +24,7 @@ public class Graphics {
 	    f.setLayout(null);  
 	    f.setVisible(true);
 	
-	    // creates rock, paper, scissors, quit buttons
+	    // creates rock, paper, scissors buttons
 	    r=new JButton(new ImageIcon("rock.gif"));    
 	    r.setBounds(250,400,200,200); 
 	    f.add(r); 
@@ -45,6 +45,16 @@ public class Graphics {
 	    l1.setFont(font1);
 	    l1.setBounds(550,100, 1000,100);  
 	    f.add(l1);
+	    
+	    plPoints=new JLabel("Your Points: " );
+	    plPoints.setFont(font1);
+	    plPoints.setBounds(1100,500,300,100);  
+	    f.add(plPoints);
+	    
+	    coPoints=new JLabel("Computer's Points: " );
+	    coPoints.setFont(font1);
+	    coPoints.setBounds(1100,600,300,100);  
+	    f.add(coPoints);
 	    
 	    // creates text fields
 	    tf1=new JTextField();

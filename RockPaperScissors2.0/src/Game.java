@@ -9,6 +9,9 @@ public class Game {
     
     public Game() {
     	compPlay = (int) (Math.random()*3 )+ 1;
+    	cPoints = 0;
+    	pPoints = 0;
+    	
     }
 
 	public String response(String str) {
