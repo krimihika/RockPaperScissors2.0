@@ -7,8 +7,8 @@ import java.awt.Font;
 public class Graphics {
 	JFrame f;  
     JButton b,r,p,s;
-    JTextField tf1;
-    JTextArea ta;
+    JTextField tf1,tf2,tf3;
+    //JTextArea ta;
     JLabel l1,l2,l3,l4,l5; 
     Font font1 = new Font("SansSerif", Font.BOLD, 20);
     Game g;
@@ -19,7 +19,7 @@ public class Graphics {
 		
 		// creates frame
 		JFrame f=new JFrame("Rock Paper Scissors");
-		myColor = new Color(237, 153, 45);
+		myColor = new Color(144, 215, 229);
 		f.getContentPane().setBackground(myColor);
 	    f.setLayout(null);  
 	    f.setVisible(true);
@@ -29,11 +29,11 @@ public class Graphics {
 	    r.setBounds(250,400,200,200); 
 	    f.add(r); 
 	    
-	    p=new JButton(new ImageIcon("paper.png"));    
+	    p=new JButton(new ImageIcon("paper.gif"));    
 	    p.setBounds(500,400,200,200); 
 	    f.add(p);
 	    
-	    s=new JButton(new ImageIcon("sc.jpg"));    
+	    s=new JButton(new ImageIcon("sc.gif"));    
 	    s.setBounds(750,400,200,200); 
 	    f.add(s); 
 	    
@@ -50,19 +50,25 @@ public class Graphics {
 	    tf1=new JTextField();
 	    tf1.setFont(font1);
 	    tf1.setHorizontalAlignment(JTextField.CENTER);
-	    tf1.setBounds(1100,50,250,100); 
+	    tf1.setBounds(1100,50,300,100); 
 	    
-	    ta=new JTextArea();
-	    ta.setFont(font1);
-	    //ta.setHorizontalAlignment(JTextField.CENTER);
-	    ta.setBounds(1100,200,300,100); 
+	    tf2=new JTextField();
+	    tf2.setFont(font1);
+	    tf2.setHorizontalAlignment(JTextField.CENTER);
+	    tf2.setBounds(1100,200,300,100); 
+	    
+	    tf3=new JTextField();
+	    tf3.setFont(font1);
+	    tf3.setHorizontalAlignment(JTextField.CENTER);
+	    tf3.setBounds(1100,350,300,100); 
 	    
 	    r.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
 	    	            tf1.setText("You Played Rock");
 	    	            g = new Game();
 	    	            g.person = "Rock";
-	    	            ta.setText("Computer Played: " + g.response(g.compPlay) + "\n" + g.result());
+	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
+	    	            tf3.setText(g.result());
 	    	        }  
 	    	    });
 	    p.addActionListener(new ActionListener(){  
@@ -70,7 +76,8 @@ public class Graphics {
 	    	            tf1.setText("You Played Paper");
 	    	            g = new Game();
 	    	            g.person = "Paper";
-	    	            ta.setText("Computer Played: " + g.response(g.compPlay) + "\n" + g.result());
+	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
+	    	            tf3.setText(g.result());
 	    	        }  
 	    	    });
 	    s.addActionListener(new ActionListener(){  
@@ -78,11 +85,13 @@ public class Graphics {
 	    	            tf1.setText("You Played Scissors");
 	    	            g = new Game();
 	    	            g.person = "Scissors";
-	    	            ta.setText("Computer Played: " + g.response(g.compPlay) + "\n" + g.result());
+	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
+	    	            tf3.setText(g.result());
 	    	        }  
 	    	    });
 	    	    f.add(tf1);
-	    	    f.add(ta);
+	    	    f.add(tf2);
+	    	    f.add(tf3);
 	    	    
 
 	
