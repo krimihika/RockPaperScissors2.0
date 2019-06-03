@@ -9,11 +9,13 @@ public class Graphics {
     JButton b,r,p,s;
     JTextField tf1,tf2,tf3;
     //JTextArea ta;
-    JLabel l1,plPoints,coPoints; 
+    JLabel l1,plPoints,coPoints,streakLabel; 
     Font font1 = new Font("SansSerif", Font.BOLD, 20);
+    Font font2 = new Font("Aharoni", Font.BOLD, 50);
     Game g;
     Color myColor;
     boolean quit = false;
+    int cp = 0 ,pp = 0, streak = 0;
     
 	public Graphics() {
 		
@@ -42,8 +44,8 @@ public class Graphics {
 	
 		// creates labels 
 	    l1=new JLabel("Enter a move. ");
-	    l1.setFont(font1);
-	    l1.setBounds(550,100, 1000,100);  
+	    l1.setFont(font2);
+	    l1.setBounds(500,100, 1000,100);  
 	    f.add(l1);
 	    
 	    plPoints=new JLabel("Your Points: " );
@@ -55,6 +57,11 @@ public class Graphics {
 	    coPoints.setFont(font1);
 	    coPoints.setBounds(1100,600,300,100);  
 	    f.add(coPoints);
+	    
+	    streakLabel =new JLabel("Streak: " );
+	    streakLabel.setFont(font1);
+	    streakLabel.setBounds(500,300,300,100);  
+	    f.add(streakLabel);
 	    
 	    // creates text fields
 	    tf1=new JTextField();
@@ -79,6 +86,18 @@ public class Graphics {
 	    	            g.person = "Rock";
 	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
 	    	            tf3.setText(g.result());
+	    	            
+	    	            if(g.result().equals("Computer wins")) {
+	    	    	    	cp ++;
+	    	    	    	streak = 0;
+	    	    	    }else if (g.result().equals("You win")){
+	    	    	    	pp ++;
+	    	    	    	streak ++;
+	    	    	    }
+	    	            coPoints.setText("Computer's Points: " + cp);
+	    	            plPoints.setText("Player's Points: " + pp);
+	    	            streakLabel.setText("Streak: " + streak);
+	    	            
 	    	        }  
 	    	    });
 	    p.addActionListener(new ActionListener(){  
@@ -88,6 +107,17 @@ public class Graphics {
 	    	            g.person = "Paper";
 	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
 	    	            tf3.setText(g.result());
+	    	            
+	    	            if(g.result().equals("Computer wins")) {
+	    	    	    	cp ++;
+	    	    	    	streak = 0;
+	    	    	    }else if (g.result().equals("You win")){
+	    	    	    	pp ++;
+	    	    	    	streak ++;
+	    	    	    }
+	    	            coPoints.setText("Computer's Points: " + cp);
+	    	            plPoints.setText("Player's Points: " + pp);
+	    	            streakLabel.setText("Streak: " + streak);
 	    	        }  
 	    	    });
 	    s.addActionListener(new ActionListener(){  
@@ -97,6 +127,17 @@ public class Graphics {
 	    	            g.person = "Scissors";
 	    	            tf2.setText("Computer Played: " + g.response(g.compPlay));
 	    	            tf3.setText(g.result());
+	    	            
+	    	            if(g.result().equals("Computer wins")) {
+	    	    	    	cp ++;
+	    	    	    	streak = 0;
+	    	    	    }else if (g.result().equals("You win")){
+	    	    	    	pp ++;
+	    	    	    	streak ++;
+	    	    	    }
+	    	            coPoints.setText("Computer's Points: " + cp);
+	    	            plPoints.setText("Player's Points: " + pp);
+	    	            streakLabel.setText("Streak: " + streak);
 	    	        }  
 	    	    });
 	    	    f.add(tf1);
@@ -106,6 +147,8 @@ public class Graphics {
 
 	
 	    f.pack();
+	    
+	 
 	    
 	}
 }  
