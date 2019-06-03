@@ -93,6 +93,8 @@ public class Graphics {
 	    	    	    }else if (g.result().equals("You win")){
 	    	    	    	pp ++;
 	    	    	    	streak ++;
+	    	    	    } else if (g.result().equals("Tie")){
+	    	    	    	streak  =0 ;
 	    	    	    }
 	    	            coPoints.setText("Computer's Points: " + cp);
 	    	            plPoints.setText("Player's Points: " + pp);
@@ -114,6 +116,8 @@ public class Graphics {
 	    	    	    }else if (g.result().equals("You win")){
 	    	    	    	pp ++;
 	    	    	    	streak ++;
+	    	    	    }else if (g.result().equals("Tie")){
+	    	    	    	streak  =0 ;
 	    	    	    }
 	    	            coPoints.setText("Computer's Points: " + cp);
 	    	            plPoints.setText("Player's Points: " + pp);
@@ -134,6 +138,8 @@ public class Graphics {
 	    	    	    }else if (g.result().equals("You win")){
 	    	    	    	pp ++;
 	    	    	    	streak ++;
+	    	    	    }else if (g.result().equals("Tie")){
+	    	    	    	streak  =0 ;
 	    	    	    }
 	    	            coPoints.setText("Computer's Points: " + cp);
 	    	            plPoints.setText("Player's Points: " + pp);
