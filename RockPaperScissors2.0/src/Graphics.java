@@ -19,6 +19,7 @@ public class Graphics {
     boolean quit = false;
     int compPoints = 0 ,playerPoints = 0, streak = 0, pointsToWin;
     JSlider slider;
+    JProgressBar progressBar;
     
    
     
@@ -218,6 +219,7 @@ public class Graphics {
         
 	    f.add(slider);
 	    
+	   
 	    
 	 
 	    
