@@ -1,9 +1,8 @@
 import javax.swing.*; 
 import java.awt.event.*;  
-import java.util.*;
-import java.awt.font.*;
 import java.awt.Color;
 import java.awt.Font;
+
 public class Graphics {
 	JFrame f;  
     JButton b,r,p,s;
@@ -15,16 +14,20 @@ public class Graphics {
     Game g;
     Color myColor;
     boolean quit = false;
-    int cp = 0 ,pp = 0, streak = 0;
+    int compPoints = 0 ,playerPoints = 0, streak = 0;
+    
+   
     
 	public Graphics() {
 		
 		// creates frame
 		JFrame f=new JFrame("Rock Paper Scissors");
-		myColor = new Color(144, 215, 229);
-		f.getContentPane().setBackground(myColor);
 	    f.setLayout(null);  
 	    f.setVisible(true);
+	    
+	    // sets background color
+	    myColor = new Color(144, 215, 229);
+		f.getContentPane().setBackground(myColor);
 	
 	    // creates rock, paper, scissors buttons
 	    r=new JButton(new ImageIcon("rock.gif"));    
@@ -39,13 +42,11 @@ public class Graphics {
 	    s.setBounds(750,400,200,200); 
 	    f.add(s); 
 	    
-	    f.setLayout(null);    
-	    f.setVisible(true); 
-	
 		// creates labels 
-	    l1=new JLabel("Enter a move. ");
+	    l1=new JLabel("Pick a move. ");
 	    l1.setFont(font2);
-	    l1.setBounds(500,100, 1000,100);  
+	    l1.setForeground(Color.BLUE);
+	    l1.setBounds(400,100, 1000,100);  
 	    f.add(l1);
 	    
 	    plPoints=new JLabel("Your Points: " );
@@ -60,7 +61,7 @@ public class Graphics {
 	    
 	    streakLabel =new JLabel("Streak: " );
 	    streakLabel.setFont(font1);
-	    streakLabel.setBounds(500,300,300,100);  
+	    streakLabel.setBounds(1100,700,300,100);  
 	    f.add(streakLabel);
 	    
 	    // creates text fields
@@ -88,16 +89,16 @@ public class Graphics {
 	    	            tf3.setText(g.result());
 	    	            
 	    	            if(g.result().equals("Computer wins")) {
-	    	    	    	cp ++;
+	    	    	    	compPoints ++;
 	    	    	    	streak = 0;
 	    	    	    }else if (g.result().equals("You win")){
-	    	    	    	pp ++;
+	    	    	    	playerPoints ++;
 	    	    	    	streak ++;
 	    	    	    } else if (g.result().equals("Tie")){
 	    	    	    	streak  =0 ;
 	    	    	    }
-	    	            coPoints.setText("Computer's Points: " + cp);
-	    	            plPoints.setText("Player's Points: " + pp);
+	    	            coPoints.setText("Computer's Points: " + compPoints);
+	    	            plPoints.setText("Player's Points: " + playerPoints);
 	    	            streakLabel.setText("Streak: " + streak);
 	    	            
 	    	        }  
@@ -111,16 +112,16 @@ public class Graphics {
 	    	            tf3.setText(g.result());
 	    	            
 	    	            if(g.result().equals("Computer wins")) {
-	    	    	    	cp ++;
+	    	    	    	compPoints ++;
 	    	    	    	streak = 0;
 	    	    	    }else if (g.result().equals("You win")){
-	    	    	    	pp ++;
+	    	    	    	playerPoints ++;
 	    	    	    	streak ++;
 	    	    	    }else if (g.result().equals("Tie")){
 	    	    	    	streak  =0 ;
 	    	    	    }
-	    	            coPoints.setText("Computer's Points: " + cp);
-	    	            plPoints.setText("Player's Points: " + pp);
+	    	            coPoints.setText("Computer's Points: " + compPoints);
+	    	            plPoints.setText("Player's Points: " + playerPoints);
 	    	            streakLabel.setText("Streak: " + streak);
 	    	        }  
 	    	    });
@@ -133,22 +134,23 @@ public class Graphics {
 	    	            tf3.setText(g.result());
 	    	            
 	    	            if(g.result().equals("Computer wins")) {
-	    	    	    	cp ++;
+	    	    	    	compPoints ++;
 	    	    	    	streak = 0;
 	    	    	    }else if (g.result().equals("You win")){
-	    	    	    	pp ++;
+	    	    	    	playerPoints ++;
 	    	    	    	streak ++;
 	    	    	    }else if (g.result().equals("Tie")){
-	    	    	    	streak  =0 ;
+	    	    	    	streak  = 0 ;
 	    	    	    }
-	    	            coPoints.setText("Computer's Points: " + cp);
-	    	            plPoints.setText("Player's Points: " + pp);
+	    	            coPoints.setText("Computer's Points: " + compPoints);
+	    	            plPoints.setText("Player's Points: " + playerPoints);
 	    	            streakLabel.setText("Streak: " + streak);
 	    	        }  
 	    	    });
 	    	    f.add(tf1);
 	    	    f.add(tf2);
 	    	    f.add(tf3);
+	    	    
 	    	    
 
 	

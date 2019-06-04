@@ -7,25 +7,18 @@ public class Game {
 	int cPoints;
 	int pPoints;
     
+	//constructor 
     public Game() {
+    	// initializes a random number that represents the computer's turn
     	compPlay = (int) (Math.random()*3 )+ 1;
+    	
+    	//sets initial points of player and computer to 0.
     	cPoints = 0;
     	pPoints = 0;
     	
     }
 
-	public String response(String str) {
-		if(str.equals("R")) {
-			person = "Rock";
-			return "Rock";
-		}else if(str.equals("P")) {
-			person = "Paper";
-			return "Paper";
-		}else {
-			person = "Scissors";
-			return "Scissors";
-		}	
-	}
+    // converts random number to a string representing computer's turn
 	public String response(int num) {
 		if(num == 1) {
 			comp = "Rock";
@@ -38,9 +31,11 @@ public class Game {
 			return "Scissors";
 		}	
 	}
+	
+	// evaluates who wins and updates points
 	public String result () {
 		if(person.equals("Rock") && comp.equals("Scissors")) {
-			cPoints++;
+			pPoints++;
 			return "You win";
 		}
 		else if(person.equals("Rock") && comp.equals("Paper")) {
@@ -48,7 +43,7 @@ public class Game {
 			return "Computer wins";
 		}
 		else if(person.equals("Paper") && comp.equals("Rock")) {
-			cPoints++;
+			pPoints++;
 			return "You win";
 		}
 		else if(person.equals("Paper") && comp.equals("Scissors")) {
@@ -59,7 +54,7 @@ public class Game {
 			cPoints++;
 			return "Computer wins";
 		}else if(person.equals("Scissors") && comp.equals("Paper")) {
-			cPoints++;
+			pPoints++;
 			return "You win";
 		}else {
 			return "Tie";
