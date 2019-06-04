@@ -36,26 +36,26 @@ public class Game {
 	public String result () {
 		if(person.equals("Rock") && comp.equals("Scissors")) {
 			pPoints++;
-			return "You win";
+			return "Point for Player";
 		}
 		else if(person.equals("Rock") && comp.equals("Paper")) {
 			cPoints++;
-			return "Computer wins";
+			return "Point for Computer";
 		}
 		else if(person.equals("Paper") && comp.equals("Rock")) {
 			pPoints++;
-			return "You win";
+			return "Point for Player";
 		}
 		else if(person.equals("Paper") && comp.equals("Scissors")) {
 			cPoints++;
-			return "Computer wins";
+			return "Point for Computer";
 		}
 		else if(person.equals("Scissors") && comp.equals("Rock")) {
 			cPoints++;
-			return "Computer wins";
+			return "Point for Computer";
 		}else if(person.equals("Scissors") && comp.equals("Paper")) {
 			pPoints++;
-			return "You win";
+			return "Point for Player";
 		}else {
 			return "Tie";
 		}
